@@ -1,0 +1,9 @@
+2010-12-21  Kingpin  <Martin@BLUEMAX>
+
+	* Find.pm (todos): added wantarray mode
+
+2010-12-06  Kingpin  <Martin@BLUEMAX>
+
+	* Find.pm (ignore_dirs): new method
+	(add_files): new method
+	(ignore_files): new method
