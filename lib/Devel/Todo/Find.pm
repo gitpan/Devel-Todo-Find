@@ -1,5 +1,5 @@
 
-# $Id: Find.pm,v 1.11 2011-01-11 00:32:12 Martin Exp $
+# $Id: Find.pm,v 1.12 2011-01-21 12:53:14 Martin Exp $
 
 package Devel::Todo::Find;
 
@@ -18,7 +18,7 @@ Devel::Todo::Find - Search source code files for TODO comments
 This class helps you search your file system recursively,
 looking for files containing what looks like a Perl comment
 expressing a TODO item.
-This is the thing it looks for:
+This is an example of the format it looks for:
 
   # TODO: this is an example
 
@@ -40,7 +40,7 @@ use Data::Dumper;
 use File::Find;
 
 our
-$VERSION = do { my @r = (q$Revision: 1.11 $ =~ /\d+/g); sprintf "%d."."%03d" x $#r, @r };
+$VERSION = do { my @r = (q$Revision: 1.12 $ =~ /\d+/g); sprintf "%d."."%03d" x $#r, @r };
 
 =head2 Constructor
 

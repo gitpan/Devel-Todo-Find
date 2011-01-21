@@ -16,6 +16,8 @@ Programs/todofind
 README
 t/Include/include.pl
 t/Include/include.pm
+t/LeaveOut/leaveout.pl
+t/LeaveOut/leaveout.pm
 t/pod-coverage.t
 t/pod.t
 t/todos.t

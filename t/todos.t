@@ -25,13 +25,13 @@ $o->add_dirs(q{t});
 @as = $o->todos;
 is(scalar(@as), 8, 'todos in t');
 
-$o->ignore_dirs(q{Ignore});
+$o->ignore_dirs(q{LeaveOut});
 @as = $o->todos;
-is(scalar(@as), 4, 'todos in t but not t/ignore');
+is(scalar(@as), 4, 'todos in t but not t/LeaveOut');
 
 $o->ignore_dirs(q{.pm});
 @as = $o->todos;
-is(scalar(@as), 2, 'todos in t but not t/ignore and not *.pm');
+is(scalar(@as), 2, 'todos in t but not t/LeaveOut and not *.pm');
 
 pass(q{all done});
 
