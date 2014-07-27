@@ -5,6 +5,7 @@ inc/Module/Install/Can.pm
 inc/Module/Install/Fetch.pm
 inc/Module/Install/Makefile.pm
 inc/Module/Install/Metadata.pm
+inc/Module/Install/PerlTar.pm
 inc/Module/Install/Scripts.pm
 inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
@@ -12,12 +13,13 @@ lib/Devel/Todo/Find.pm
 Makefile.PL
 MANIFEST			This list of files
 META.yml
+MYMETA.json
+MYMETA.yml
 Programs/todofind
 README
 t/Include/include.pl
 t/Include/include.pm
-t/LeaveOut/leaveout.pl
-t/LeaveOut/leaveout.pm
+t/LeaveOut/tilde.txt~
 t/pod-coverage.t
 t/pod.t
 t/todos.t

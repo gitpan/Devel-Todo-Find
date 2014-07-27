@@ -12,6 +12,12 @@ BEGIN
 my $o = new $sMod;
 isa_ok($o, $sMod);
 
+# Create a file whose name ends with tilde (because CVS doesn't let us
+# have it in the distro):
+warn $! if ! open TILDE, '>', q{t/LeaveOut/tilde.txt~};
+print TILDE qq{ignore this file\n} or warn $!;
+close TILDE or warn $!;
+
 # Force scalar mode, default options:
 my $s = $o->todos;
 isnt($s, q{}, 'got some todos (scalar mode)');

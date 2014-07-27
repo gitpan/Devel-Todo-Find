@@ -1,5 +1,5 @@
 
-# $Id: Find.pm,v 1.12 2011-01-21 12:53:14 Martin Exp $
+# $Id: Find.pm,v 1.13 2014-07-27 01:08:06 Martin Exp $
 
 package Devel::Todo::Find;
 
@@ -28,8 +28,9 @@ you can tell it folders to ignore (using the ignore_dirs method).
 By default, it looks in the current working directory,
 and
 by default, it skips
-folders in a Perl module development environment that you
-typically want to skip (such as CVS and blib).
+folders in a Perl module development environment that a module author
+typically wants to skip (such as CVS and blib),
+as well as Emacs backup files (that end with tilde).
 Then you can get the list of TODO items by calling the todos method.
 
 =head1 FUNCTIONS
@@ -40,7 +41,7 @@ use Data::Dumper;
 use File::Find;
 
 our
-$VERSION = do { my @r = (q$Revision: 1.12 $ =~ /\d+/g); sprintf "%d."."%03d" x $#r, @r };
+$VERSION = do { my @r = (q$Revision: 1.13 $ =~ /\d+/g); sprintf "%d."."%03d" x $#r, @r };
 
 =head2 Constructor
 
@@ -107,6 +108,7 @@ by default the following items will be ignored:
   qr{CVS}i
   qr{\Ainc/}
   qr{\.yaml\Z}i
+  qr{~\Z}i
 
 =cut
 
@@ -170,8 +172,8 @@ sub _gather_todos
     {
     push @asItem, q{.};
     } # if
-  # By default, (if user doesn't tell us otherwise), we will not
-  # process common module-author folders:
+  # By default, (if user doesn't tell us otherwise), we will ignore
+  # items that a Perl module-author would want to ignore:
   if (! @aIgnore)
     {
     @aIgnore =(
@@ -179,6 +181,7 @@ sub _gather_todos
                qr{CVS}i,
                qr{\Ainc/},
                qr{\.yaml\Z}i,
+               qr{~\Z}i,
               );
     } # if
   # print STDERR qq{ DDD in _gather_todos, asItem is }, Dumper(\@asItem);
