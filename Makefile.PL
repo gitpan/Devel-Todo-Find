@@ -1,5 +1,5 @@
 # This -*- cperl -*- program writes a Makefile
-# $Id: Makefile.PL,v 1.4 2014-07-27 01:04:54 Martin Exp $
+# $Id: Makefile.PL,v 1.5 2014-10-15 11:04:37 Martin Exp $
 
 use inc::Module::Install;
 
@@ -24,7 +24,7 @@ if ($ENV{MTHURN_PERL_DEV})
 
 WriteAll;
 
-if ($ENV{MTHURN_PERL_DEV})
+if (0 && $ENV{MTHURN_PERL_DEV})
   {
   my $sFnameMakefile = q{Makefile};
   eval "use File::Slurp";

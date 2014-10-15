@@ -1,5 +1,5 @@
 
-# $Id: Find.pm,v 1.13 2014-07-27 01:08:06 Martin Exp $
+# $Id: Find.pm,v 1.14 2014-10-15 11:04:49 Martin Exp $
 
 package Devel::Todo::Find;
 
@@ -41,7 +41,7 @@ use Data::Dumper;
 use File::Find;
 
 our
-$VERSION = do { my @r = (q$Revision: 1.13 $ =~ /\d+/g); sprintf "%d."."%03d" x $#r, @r };
+$VERSION = do { my @r = (q$Revision: 1.14 $ =~ /\d+/g); sprintf "%d."."%03d" x $#r, @r };
 
 =head2 Constructor
 
@@ -254,3 +254,5 @@ This software is released under the same license as Perl itself.
 Martin 'Kingpin' Thurn, C<mthurn at cpan.org>, L<http://tinyurl.com/nn67z>.
 
 =cut
+
+The end.

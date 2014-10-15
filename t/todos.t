@@ -1,6 +1,7 @@
 
 use blib;
 
+use Data::Dumper;
 use Test::More qw( no_plan );
 
 my $sMod;
@@ -15,7 +16,10 @@ isa_ok($o, $sMod);
 # Create a file whose name ends with tilde (because CVS doesn't let us
 # have it in the distro):
 warn $! if ! open TILDE, '>', q{t/LeaveOut/tilde.txt~};
-print TILDE qq{ignore this file\n} or warn $!;
+print TILDE <<ENDTILDE or warn $!;
+TODO: tilde.txt~ line 1
+TODO:tildetxtline2
+ENDTILDE
 close TILDE or warn $!;
 
 # Force scalar mode, default options:
@@ -29,6 +33,7 @@ cmp_ok(scalar(@as), q{>}, 0, 'got some todos (array mode)');
 
 $o->add_dirs(q{t});
 @as = $o->todos;
+# warn Dumper(\@as);
 is(scalar(@as), 8, 'todos in t');
 
 $o->ignore_dirs(q{LeaveOut});

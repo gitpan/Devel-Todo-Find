@@ -19,6 +19,8 @@ Programs/todofind
 README
 t/Include/include.pl
 t/Include/include.pm
+t/LeaveOut/sample.pl
+t/LeaveOut/sample.pm
 t/LeaveOut/tilde.txt~
 t/pod-coverage.t
 t/pod.t

@@ -4,7 +4,7 @@
       "Martin 'Kingpin' Thurn, C<mthurn at cpan.org>, L<http://tinyurl.com/nn67z>."
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Module::Install version 1.08, CPAN::Meta::Converter version 2.140640",
+   "generated_by" : "Module::Install version 1.12, CPAN::Meta::Converter version 2.142060",
    "license" : [
       "perl_5"
    ],
@@ -48,6 +48,6 @@
          "http://dev.perl.org/licenses/"
       ]
    },
-   "version" : "1.013",
+   "version" : "1.014",
    "x_module_name" : "Devel::Todo::Find"
 }
